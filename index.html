@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter M. Ellis | Projects</title>
+    <meta name="description" content="Independent projects across economics, markets, data analysis and programming.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hunter M. Ellis | Projects">
+    <meta property="og:description" content="Independent projects across economics, markets, data analysis and programming.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hunter M. Ellis | Projects">
+    <meta name="twitter:description" content="Independent projects across economics, markets, data analysis and programming.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navigation" aria-label="Main navigation">
+            <a class="logo" href="#top">Hunter M. Ellis</a>
+
+            <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation-menu">
+                <span class="visually-hidden">Open navigation</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <div class="nav-menu" id="navigation-menu">
+                <a href="#projects">Projects</a>
+                <a href="#about-me">About me</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="introduction" aria-labelledby="introduction-heading">
+            <h1 id="introduction-heading">I learn by building projects around questions I find interesting.</h1>
+            <p>This website records my work across economics, markets, data analysis and programming.</p>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+
+            <div class="projects-grid">
+                <article class="project project-featured">
+                    <p class="project-number">01</p>
+                    <h3>Battery Storage Arbitrage</h3>
+
+                    <dl class="project-details">
+                        <div><dt>Status</dt><dd>Project completed</dd></div>
+                        <div><dt>Report</dt><dd>In progress</dd></div>
+                        <div><dt>Documentation</dt><dd>In progress</dd></div>
+                        <div><dt>Date</dt><dd>June–September 2026</dd></div>
+                    </dl>
+
+                    <div class="project-description">
+                        <p class="project-question">How much of the theoretical revenue from battery arbitrage survives contact with the real electricity market?</p>
+
+                        <p>
+                            When I thought of arbitrage, I pictured familiar assets such as currencies, shares and gold. I did not picture the electricity powering the laptop those trades would run on, even though electricity is itself traded continuously in wholesale markets.
+                        </p>
+
+                        <p>
+                            What makes electricity unusual is that supply and demand must remain balanced in real time. Unlike gold or other conventional assets, large quantities of electricity cannot simply be stored cheaply until they are needed. This means that when there is excess supply, prices fall very quickly, sometimes below zero. Generators effectively pay the market to take their output rather than shut down in the short term. At other times, weather, gas prices and sudden changes in demand push prices sharply higher. The result is large intraday spreads that a battery could capture, charging when electricity is cheap or negatively priced and discharging when prices rise.
+                        </p>
+
+                        <p>
+                            In reality, those spreads are difficult to capture: every cycle wears the cells, every trade costs money, and no operator knows tomorrow's prices in advance. These effects do not simply subtract from the total; they change which trades are worth making at all.
+                        </p>
+
+                        <p>
+                            To find out, I built a rolling optimiser using two years of half-hourly Elexon market data. I modelled 14 battery cases based on real British storage assets, then tested each one against eight physical and market frictions, including degradation, transaction costs and imperfect information. The result is a controlled comparison between what each battery could have earned under idealised conditions and what remained after introducing realistic costs, constraints and uncertainty.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section text-section" id="about-me" aria-labelledby="about-heading">
+            <h2 id="about-heading">About me</h2>
+            <p>
+                I am a student who builds independent projects to develop my skills in economic analysis, financial data and programming. This portfolio documents how I use Python to investigate real market data and economic questions.
+            </p>
+        </section>
+
+        <section class="section text-section" id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>For enquiries, contact me by email or find me on LinkedIn.</p>
+            <address class="contact-links">
+                <a href="mailto:hunterellis3991@gmail.com">hunterellis3991@gmail.com</a>
+                <a href="https://www.linkedin.com/in/huntermellis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </address>
+        </section>
+    </main>
+
+    <footer><p>© 2026 Hunter M. Ellis</p></footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
