@@ -1,11 +1,13 @@
 :root {
-    --background: #ffffff;
+    --background: #f1f2f3;
+    --sheet: #ffffff;
+    --sheet-padding: 2rem;
     --text: #171717;
     --muted: #666666;
     --line: #dedede;
     --line-dark: #b8b8b8;
     --gold: #8a6716;
-    --max-width: 1180px;
+    --page-gutter: clamp(1rem, 3vw, 3rem);
 }
 
 * { box-sizing: border-box; }
@@ -28,26 +30,35 @@ button:focus-visible {
     outline-offset: 4px;
 }
 
+.document-sheet {
+    width: min(210mm, calc(100% - var(--page-gutter) - var(--page-gutter)));
+    margin: 1.5rem auto;
+    padding: 0 var(--sheet-padding);
+    background: var(--sheet);
+    border: 1px solid #dedfe1;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 4%);
+}
+
 .site-header { border-bottom: 1px solid var(--line); }
 
 .navigation,
 main,
 footer {
-    width: min(var(--max-width), calc(100% - 3rem));
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
 }
 
 .navigation {
     position: relative;
     display: flex;
-    min-height: 5.25rem;
+    min-height: 3.5rem;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    font-size: 1.35rem;
 }
 
 .menu-button {
@@ -71,7 +82,7 @@ footer {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.25rem;
 }
 
 .nav-menu a {
@@ -82,84 +93,67 @@ footer {
 .nav-menu a:hover { color: var(--gold); }
 
 .introduction {
-    display: flex;
-    min-height: 21rem;
-    max-width: 62rem;
-    padding: clamp(3.25rem, 8vw, 6.5rem) 0;
-    flex-direction: column;
-    justify-content: center;
+    padding: 1.25rem 0;
 }
 
 .introduction h1 {
-    max-width: 58rem;
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.8rem, 4.5vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.035em;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .introduction p {
-    max-width: 45rem;
-    margin: 1.5rem 0 0;
+    margin: 0.4rem 0 0;
     color: var(--muted);
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    font-size: 1rem;
 }
 
 .section {
-    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+    padding: 1.25rem 0;
     border-top: 1px solid var(--line);
     scroll-margin-top: 1rem;
 }
 
 .section h2 {
-    margin: 0 0 2rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.7rem, 3vw, 2.25rem);
-    font-weight: 400;
+    margin: 0 0 0.75rem;
+    color: var(--gold);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    border-top: 1px solid var(--line-dark);
-    border-bottom: 1px solid var(--line-dark);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
 }
 
 .project {
-    padding: 1.75rem 0;
-}
-
-.project-number {
-    margin: 0 0 2.5rem;
-    color: var(--gold);
-    font-size: 0.82rem;
-    font-weight: 700;
+    padding: 0;
 }
 
 .project h3 {
-    margin: 0 0 1.5rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.35rem, 2.5vw, 2rem);
-    font-weight: 400;
-    line-height: 1.15;
+    margin: 0 0 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
-.project-details { margin: 0 0 1.6rem; }
+.project-details { margin: 0 0 0.9rem; }
 
 .project-details div {
     display: grid;
-    grid-template-columns: 9rem 1fr;
-    padding: 0.35rem 0;
-    border-bottom: 1px solid var(--line);
+    grid-template-columns: 8rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+    padding: 0.12rem 0;
 }
 
 .project-details dt { color: var(--muted); }
 .project-details dd { margin: 0; }
 
 .project-description {
-    max-width: 40rem;
     margin: 0;
 }
 
@@ -172,17 +166,17 @@ footer {
 }
 
 .project-description .project-question {
-    margin-bottom: 1.4rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.2rem, 2vw, 1.45rem);
-    line-height: 1.35;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.55;
 }
 
-.text-section p { max-width: 46rem; }
+.text-section p { margin: 0 0 0.75rem; }
 
 .contact-links {
     display: flex;
-    margin-top: 1.25rem;
+    margin-top: 0.75rem;
     flex-wrap: wrap;
     gap: 0.75rem 1.5rem;
     font-style: normal;
@@ -198,7 +192,7 @@ footer {
 .contact-links a:hover { text-decoration-color: var(--gold); }
 
 footer {
-    padding: 1.5rem 0 2.5rem;
+    padding: 0.75rem 0 1.25rem;
     border-top: 1px solid var(--line);
     color: var(--muted);
     font-size: 0.9rem;
@@ -219,41 +213,107 @@ footer p { margin: 0; }
 }
 
 @media (max-width: 800px) {
-    .menu-button { display: grid; }
-
-    .menu-button:focus-visible {
-        outline-color: var(--line-dark);
+    .navigation {
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        padding: 0.5rem 0;
     }
 
     .nav-menu {
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+    }
+
+    .navigation.is-enhanced .menu-button { display: grid; }
+
+    .navigation.is-enhanced .nav-menu {
         position: absolute;
         z-index: 10;
-        top: calc(100% - 0.35rem);
+        top: 100%;
         right: 0;
         display: none;
         min-width: 12rem;
         border: 1px solid var(--line-dark);
-        background: #ffffff;
+        background: var(--sheet);
     }
 
-    .nav-menu.is-open { display: block; }
+    .navigation.is-enhanced .nav-menu.is-open { display: block; }
 
-    .nav-menu a {
+    .navigation.is-enhanced .nav-menu a {
         display: block;
         padding: 0.8rem 1rem;
         border-bottom: 1px solid var(--line);
     }
 
-    .nav-menu a:last-child { border-bottom: 0; }
-
+    .navigation.is-enhanced .nav-menu a:last-child { border-bottom: 0; }
 }
 
 @media (max-width: 520px) {
-    .navigation,
-    main,
-    footer { width: min(var(--max-width), calc(100% - 2rem)); }
+    :root {
+        --page-gutter: 0.5rem;
+        --sheet-padding: 1rem;
+    }
 
-    .introduction { min-height: 0; }
-    .project { padding: 1.4rem 0; }
-    .project-details div { grid-template-columns: 1fr; }
+    .document-sheet { margin: 0.5rem auto; }
+
+    .project-details div {
+        grid-template-columns: 7.25rem minmax(0, 1fr);
+        column-gap: 0.5rem;
+    }
+
+    .contact-links a { overflow-wrap: anywhere; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .nav-menu a { transition: none; }
+}
+
+@page {
+    size: A4;
+    margin: 18mm;
+}
+
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+    }
+
+    .document-sheet {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .navigation .menu-button,
+    .navigation .nav-menu { display: none !important; }
+
+    .navigation {
+        min-height: 0;
+        padding: 0 0 0.75rem;
+    }
+
+    .projects-grid { display: block; }
+
+    h1, h2, h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .project-details,
+    .project-details div {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    .contact-links a { color: inherit; }
 }
